@@ -31,9 +31,11 @@ namespace AverageTextures
             int totalRed = 0;
             int totalGreen = 0;
             int totalBlue = 0;
+            int totalOpacity = 0;
             int averageRed;
             int averageGreen;
             int averageBlue;
+            int averageOpacity;
             Color color;
             Color resultColor;
 
@@ -42,17 +44,19 @@ namespace AverageTextures
                 for (int y = 0; y < height; y++)
                 {
                     color = bitmap.GetPixel(x, y);
+                    totalOpacity += color.A;
                     totalRed += color.R;
                     totalGreen += color.G;
                     totalBlue += color.B;
                 }
             }
 
+            averageOpacity = totalOpacity / totalPixels;
             averageRed = totalRed / totalPixels;
             averageGreen = totalGreen / totalPixels;
             averageBlue = totalBlue / totalPixels;
 
-            resultColor = Color.FromArgb(averageRed, averageGreen, averageBlue);
+            resultColor = Color.FromArgb(averageOpacity, averageRed, averageGreen, averageBlue);
 
             return resultColor;
         }
@@ -63,6 +67,7 @@ namespace AverageTextures
             image.Dispose();
             bitmap = setToAverageColor(bitmap);
             bitmap.Save(path);
+            bitmap.Dispose();
         }
     }
 }

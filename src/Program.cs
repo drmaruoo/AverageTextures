@@ -19,6 +19,7 @@ namespace AverageTextures
             List<string> paths = Paths.getAllPaths(directory, filetype);
             foreach (string path in paths)
             {
+                Console.WriteLine(path);
                 ImageProcessor.averageAndSaveBitmapToPath(path);
             }
             Console.WriteLine("Done to " + Paths.getPathsCount(directory, filetype));
