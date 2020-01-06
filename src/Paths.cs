@@ -18,7 +18,7 @@ namespace AverageTextures
             try
             {
                 List<string> paths = new List<string>();
-                paths = Directory.GetFiles(directory, "*." + filetype + "*", SearchOption.AllDirectories).ToList();
+                paths = Directory.GetFiles(directory, "*." + filetype, SearchOption.AllDirectories).ToList();
                 return paths;
             }
             catch (DirectoryNotFoundException e)

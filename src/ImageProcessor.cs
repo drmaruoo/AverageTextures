@@ -45,9 +45,12 @@ namespace AverageTextures
                 {
                     color = bitmap.GetPixel(x, y);
                     totalOpacity += color.A;
-                    totalRed += color.R;
-                    totalGreen += color.G;
-                    totalBlue += color.B;
+                    if (color.A > 0)
+                    {
+                        totalRed += color.R;
+                        totalGreen += color.G;
+                        totalBlue += color.B;
+                    }
                 }
             }
 
