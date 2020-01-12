@@ -13,7 +13,8 @@ namespace AverageTextures
             bmp,
             txt
         }
-        public static List<string> getAllPaths(string directory, filetypes filetype)
+
+        public static List<string> GetAllPaths(string directory, filetypes filetype)
         {
             try
             {
@@ -27,9 +28,10 @@ namespace AverageTextures
                 throw;
             }
         }
-        public static int getPathsCount(string directory, filetypes filetype)
+
+        public static int GetPathsCount(string directory, filetypes filetype)
         {
-            return getAllPaths(directory, filetype).Count;
+            return GetAllPaths(directory, filetype).Count;
         }
     }
 }

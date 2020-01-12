@@ -8,7 +8,7 @@ namespace AverageTexturesTests
     public class ImageProcessorTests
     {
         [TestMethod]
-        public void testSetToAverageColor()
+        public void TestSetToAverageColor()
         {
             //arrange
             Bitmap bitmap = new Bitmap(1, 2);

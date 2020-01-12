@@ -6,28 +6,28 @@ using System.IO;
 namespace AverageTexturesTests
 {
     [TestClass]
-    public class ProgramTest
+    public class PathTest
     {
         [TestMethod]
-        public void testGetAllPaths()
+        public void TestGetAllPaths()
         {
             //arrange
             createFakeDirectory();
-            string directory = @"Fakes\"; ;
+            string directory = @"Fakes\";
             List<string> paths = new List<string>();
             List<string> expectedPaths = new List<string>();
             Paths.filetypes filetype = Paths.filetypes.txt;
             expectedPaths.Add(@"Fakes\Test.txt");
 
             //act
-            paths = Paths.getAllPaths(directory, filetype);
+            paths = Paths.GetAllPaths(directory, filetype);
 
             //assert
             CollectionAssert.AreEqual(expectedPaths, paths);
         }
 
         [TestMethod]
-        public void testGetPathsCount()
+        public void TestGetPathsCount()
         {
             //arrange
             createFakeDirectory();
@@ -37,12 +37,12 @@ namespace AverageTexturesTests
             Paths.filetypes filetype = Paths.filetypes.txt;
 
             //act
-            pathCount = Paths.getPathsCount(directory, filetype);
+            pathCount = Paths.GetPathsCount(directory, filetype);
 
             //assert
             Assert.AreEqual(expectedPathCount, pathCount);
-
         }
+
         private static void createFakeDirectory()
         {
             if (!Directory.Exists(@"Fakes\"))

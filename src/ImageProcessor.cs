@@ -63,7 +63,7 @@ namespace AverageTextures
 
             return resultColor;
         }
-        public static void averageAndSaveBitmapToPath(string path)
+        public static void AverageAndSaveBitmapToPath(string path)
         {
             Image image = Image.FromFile(path);
             Bitmap bitmap = new Bitmap(image);
